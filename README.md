@@ -15,7 +15,8 @@ What is this?
 
 Google Docs Add-on to add liveblog posts.
 
-The Add-on has five functions you can run:
+The Add-on has six functions you can run:
+* Initialize Document (*required*): Creates the pinned post at the top and adds an end marker to the document a couple of pages down.
 * Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the posts. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
 * Set Image Url Prefix (*required*): The root url where photos and graphics will be hosted
 * Set Sidebar Logo (optional): Used to add a logo to the posts sidebar
