@@ -1,4 +1,4 @@
-anno-docs-addon
+liveblog-addon
 ===============
 
 * [What is this?](#what-is-this)
@@ -13,41 +13,29 @@ anno-docs-addon
 What is this?
 -------------
 
-Google Docs Add-on to add annotations.
+Google Docs Add-on to add liveblog posts.
 
-If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1PYWrdnrcUJwe8dlondyN_x8SjSyLqdsxUktHSHAuvv0/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the Add-on.
+The Add-on has five functions you can run:
+* Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the posts. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
+* Set Image Url Prefix (*required*): The root url where photos and graphics will be hosted
+* Set Sidebar Logo (optional): Used to add a logo to the posts sidebar
+* Add Post: Used to insert posts inside the liveblog
+* Add Embed Shortcode: Used to insert media shortcodes into a given post
 
-![Copy](screenshots/copy.png)
 
-The Add-on has three functions you can run:
-* Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the annotations. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
-* Set Sidebar Logo (optional): Used to add a logo to the annotation sidebar
-* Add Annotation: Used to insert the annotations inside the document
+Each post consists of:
+* start marker: Marks the start of a given post
+* end marker: Marks the end of a given post
+* metadata: Metadata for a given post including author information and a slug
+* placeholder: Placeholder for the post text.
 
-Each annotation consists of:
-* start marker: Marks the start of a given annotation
-* end marker: Marks the end of a given annotation
-* metadata: Metadata for a given annotation including author information and a slug
-* placeholder: Placeholder for the annotation text.
+Even though it can be used for other purposes it was developed to be combined with NPR liveblog system. You can find more information of how to use that rig [here](https://github.com/nprapps/liveblog).
 
-When we want to add an annotation to the text we can proceed in two ways:
-* Select some text on the document:
-    * We should select text of the document that is outside of any other annotation, i.e. nested annotations are not supported. When we add the annotation the selected text will be bolded by the Add-on.
-    * In this case the highlighted text will be bolded, and the annotation will be placed below the paragraph containing the highlighted text.
-* Place cursor where we want the annotation to appear in:
-    * The annotation will be added directly below our cursor.
-
-Here's a [screenshot](screenshots/annotation_doc.png) of a final annotation on a given doc.
-
-![screenshot](screenshots/annotation_doc.png)
-
-Even though it can be used for other purposes it was developed to be combined with NPR fact-checking system. You can find more information of how to use that rig [here](https://github.com/nprapps/debates).
-
-Here's a [screenshot](screenshots/annotation_html.png) of the same annotation as displayed by our factcheck rig.
+Here's a [screenshot](screenshots/annotation_html.png) of a post as displayed by our liveblog rig.
 
 ![factcheck](screenshots/annotation_html.png)
 
-The source of the annotation Add-on is inside the `annotate` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
+The source of the Liveblog Add-on is inside the `code` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
 Assumptions
 -----------
@@ -78,8 +66,8 @@ Bootstrap the project
 ---------------------
 
 ```
-cd anno-docs-addon
-mkvirtualenv anno-docs-addon
+cd liveblog-addon
+mkvirtualenv liveblog-addon
 pip install -r requirements.txt
 ```
 
