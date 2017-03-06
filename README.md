@@ -15,6 +15,10 @@ What is this?
 
 Google Docs Add-on to add liveblog posts.
 
+If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/a/npr.org/document/d/1gM-O692UzOOvzM2PgESy2OfTGj06jMa1qmMxG9j48wI/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the Add-on.
+
+![Copy](screenshots/copy.png)
+
 The Add-on has six functions you can run:
 * Initialize Document (*required*): Creates the pinned post at the top and adds an end marker to the document a couple of pages down.
 * Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the posts. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
@@ -32,9 +36,9 @@ Each post consists of:
 
 Even though it can be used for other purposes it was developed to be combined with NPR liveblog system. You can find more information of how to use that rig [here](https://github.com/nprapps/liveblog).
 
-Here's a [screenshot](screenshots/annotation_html.png) of a post as displayed by our liveblog rig.
+Here's a [screenshot](screenshots/post_html.png) of a post as displayed by our liveblog rig.
 
-![factcheck](screenshots/annotation_html.png)
+![factcheck](screenshots/post_html.png)
 
 The source of the Liveblog Add-on is inside the `code` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
