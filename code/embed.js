@@ -18,6 +18,20 @@ function showEmbedSidebar_() {
   ui.showSidebar(html);
 }
 
+/**
+ * Escapes quotes from a given string and returns html codes instead
+ */
+function cleanQuotes_(str) {
+    var clean_str = str;
+    clean_str = clean_str.replace(/"/g,"&quot;");
+    clean_str = clean_str.replace(/'/g, "&apos;");
+    clean_str = clean_str.replace(/‘/g, "&lsquo;");
+    clean_str = clean_str.replace(/’/g, "&rsquo;");
+    clean_str = clean_str.replace(/“/g, "&ldquo;");
+    clean_str = clean_str.replace(/”/g, "&rdquo;");
+    return clean_str;
+}
+
 /* Parses the corresponding attributes for each shortcode embed type
  * Returns a string with all the attributes needed
  */
@@ -30,12 +44,12 @@ function getAttributes(formObject) {
             break;
         case "image":
             if (formObject.caption) {
-              var caption_clean = formObject.caption.replace(/"/g,"&quot;").replace(/'/g, "&apos;");
+              var caption_clean = cleanQuotes_(formObject.caption);
               attributes += "caption=\"" + caption_clean + "\"";
               attributes += " ";
             }
             if (formObject.credit) {
-              var credit_clean = formObject.credit.replace(/"/g,"&quot;").replace(/'/g, "&apos;");
+              var credit_clean = cleanQuotes_(formObject.credit);
               attributes += "credit=\"" + credit_clean + "\"";
             } else {
               var msg =  Utilities.formatString("Image must have credit.");
