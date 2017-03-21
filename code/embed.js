@@ -67,9 +67,19 @@ function getAttributes(formObject) {
             attributes += "youtube_start_time=" + youtube_start_time;
             break;
         case "npr_video":
-            attributes += "story_id=" + formObject.story_id;
-            attributes += " "
-            attributes += "media_id=" + formObject.media_id;
+            if (formObject.story_id) {
+              attributes += "story_id=" + formObject.story_id;
+              attributes += " ";
+            } else {
+              var msg =  Utilities.formatString("NPR video must have a Seamus Story ID.");
+              throw new CustomError(msg, 'embed.js', '70');
+            }
+            if (formObject.media_id) {
+              attributes += "media_id=" + formObject.media_id;
+            } else {
+              var msg =  Utilities.formatString("NPR video must have a Media ID.");
+              throw new CustomError(msg, 'embed.js', '77');
+            }
             break;
         case "internal_link":
             attributes += "link_text=\"" + formObject.link_text + "\"";
@@ -151,10 +161,12 @@ function insertShortCode(formObject) {
 
         // CREATE SHORTCODE
         var shortCode = "[% " + formObject.embed_type
-        if (formObject.embed_type !== "internal_link") {
-            shortCode += " " + url;
-        } else {
+        if (formObject.embed_type === "internal_link") {
             shortCode += " " + formObject.slug;
+        } else if (formObject.embed_type === "npr_video"){
+            Logger.log('npr video embed, skip url');
+        } else {
+            shortCode += " " + url;
         }
 
         shortCode += " " + attrs + " %]";
