@@ -66,6 +66,11 @@ function getAttributes(formObject) {
             }
             attributes += "youtube_start_time=" + youtube_start_time;
             break;
+        case "npr_video":
+            attributes += "story_id=" + formObject.story_id;
+            attributes += " "
+            attributes += "media_id=" + formObject.media_id;
+            break;
         case "internal_link":
             attributes += "link_text=\"" + formObject.link_text + "\"";
             break;

@@ -33,6 +33,10 @@
               <label for="radio-embed-type-youtube">Youtube</label>
             </div>
             <div>
+              <input type="radio" name="embed_type" id="radio-embed-type-nprvideo" class="embed-type" value="npr_video">
+              <label for="radio-embed-type-nprvideo">NPR Video</label>
+            </div>
+            <div>
               <input type="radio" name="embed_type" id="radio-embed-type-link" class="embed-type" value="internal_link">
               <label for="radio-embed-type-link">Internal Link</label>
             </div>
@@ -40,7 +44,7 @@
         </div>
 
         <div class="block form-group">
-          <div><h3 id="source-input" for="url">URL</h3><span class="required-flag">*</span></div>
+          <div id="url-label"><h3 id="source-input" for="url">URL</h3><span class="required-flag">*</span></div>
           <input class="width-100" placeholder="https://twitter.com/titonka/status/791972573580001280"
                  type="url" name="url" id="url">
         </div>
@@ -93,6 +97,18 @@
                      type="text" name="youtube_start_minute" id="minute"> minute
               <input class="youtube-starting" placeholder="00"
                     type="text" name="youtube_start_second" id="second"> seconds
+            </div>
+          </div>
+          <div class="attr-options" id="radio-embed-type-nprvideo-options">
+            <div class="option">
+              <label for="story_id">Seamus Story ID<span class="required-flag">*</span></label>
+              <input class="width-100" placeholder="509039636"
+                    type="text" name="story_id" id="story_id">
+            </div>
+            <div class="option">
+              <label for="media_id">Video Media ID<span class="required-flag">*</span></label>
+              <input class="width-100" placeholder="509111255"
+                    type="text" name="media_id" id="media_id">
             </div>
           </div>
           <div class="attr-options" id="radio-embed-type-link-options">

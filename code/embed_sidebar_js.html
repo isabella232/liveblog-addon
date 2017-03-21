@@ -68,33 +68,44 @@
             $('#attr-options').show();
 
             if ($("#radio-embed-type-twitter").is(":checked")) {
+              $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'https://twitter.com/titonka/status/791972573580001280').val('').focus().blur();
             }
             else if ($("#radio-embed-type-image").is(":checked")) {
+              $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'FileName.jpg').val('').focus().blur();
             }
             else if ($("#radio-embed-type-graphic").is(":checked")) {
+              $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'results-map1.png').val('').focus().blur();
               $('#attr-options').hide();
             }
             else if ($("#radio-embed-type-facebook").is(":checked")) {
+              $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'https://www.facebook.com/nprmusic/videos/1358050970871580/').val('').focus().blur();
               $('#attr-options').hide();
             }
             else if ($("#radio-embed-type-youtube").is(":checked")) {
+              $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'https://www.youtube.com/embed/ucEAcIMkS0c').val('').focus().blur();
             }
+            else if ($("#radio-embed-type-nprvideo").is(":checked")) {
+              $('#url-label').hide();
+              $('#url').hide();
+              $('#slugs').hide();
+            }
             else if ($("#radio-embed-type-link").is(":checked")){
+              $('#url-label').show();
               $('#url').hide();
               $('#slugs').show();
             }
