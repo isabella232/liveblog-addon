@@ -1,5 +1,4 @@
-liveblog-addon
-===============
+# liveblog-addon
 
 * [What is this?](#what-is-this)
 * [Assumptions](#assumptions)
@@ -10,8 +9,7 @@ liveblog-addon
 * [Google Document Permissions](#google-document-permissions)
 * [License and credits](#license-and-credits)
 
-What is this?
--------------
+## What is this?
 
 Google Docs Add-on to add liveblog posts.
 
@@ -19,13 +17,14 @@ If you just want to use it there's a publicly available [Google Doc Template](ht
 
 ![Copy](screenshots/copy.png)
 
-The Add-on has six functions you can run:
+The Add-on has these functions you can run:
 * Initialize Document (*required*): Creates the pinned post at the top and adds an end marker to the document a couple of pages down.
 * Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the posts. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
 * Set Image Url Prefix (*required*): The root url where photos and graphics will be hosted
 * Set Sidebar Logo (optional): Used to add a logo to the posts sidebar
 * Add Post: Used to insert posts inside the liveblog
 * Add Embed Shortcode: Used to insert media shortcodes into a given post
+* Add AP Live Video: Used to insert an AP live videostream embed [read about this](https://github.com/nprapps/liveblog/issues/35)
 
 
 Each post consists of:
@@ -42,8 +41,7 @@ Here's a [screenshot](screenshots/post_html.png) of a post as displayed by our l
 
 The source of the Liveblog Add-on is inside the `code` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
-Assumptions
------------
+## Assumptions
 
 The following things are assumed to be true in this documentation.
 
@@ -54,8 +52,7 @@ The following things are assumed to be true in this documentation.
 
 For more details on the technology stack used with the app-template, see our [development environment blog post](http://blog.apps.npr.org/2013/06/06/how-to-setup-a-developers-environment.html).
 
-What's in here?
----------------
+## What's in here?
 
 The project contains the following folders and important files:
 
@@ -67,8 +64,7 @@ The project contains the following folders and important files:
 * ``render_utils.py`` -- Code supporting template rendering.
 * ``requirements.txt`` -- Python requirements.
 
-Bootstrap the project
----------------------
+## Bootstrap the project
 
 ```
 cd liveblog-addon
@@ -78,15 +74,13 @@ pip install -r requirements.txt
 
 **Problems installing requirements?** You may need to run the pip command as ``ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements.txt`` to work around an issue with OSX.
 
-Hide project secrets
---------------------
+## Hide project secrets
 
 Project secrets should **never** be stored in ``app_config.py`` or anywhere else in the repository. They will be leaked to the client if you do. Instead, always store passwords, keys, etc. in environment variables and document that they are needed here in the README.
 
 Any environment variable that starts with ``$PROJECT_SLUG_`` will be automatically loaded when ``app_config.get_secrets()`` is called.
 
-Run the project
----------------
+## Run the project
 
 A flask app is used to run the project locally. It will automatically recompile templates and assets on demand.
 
@@ -97,8 +91,7 @@ fab app
 
 Visit [localhost:8000](http://localhost:8000) in your browser.
 
-Google Apps Scripts Development
--------------------------------
+## Google Apps Scripts Development
 
 We use our codebase stored on github as the master for the Google Apps Scripts code. We have created a series of Fabric commands to ease the workflow of updating the actual code run inside google drive.
 
@@ -152,18 +145,17 @@ Where `ENVIRONMENT` can be: `development` or `production`. Depending on the envi
 fab development gs.upsert
 ```
 
-Google Document Permissions
----------------------------
+## Google Document Permissions
 
 We are accessing the Live Fact Check document from the server to pull out its content using credentials associated with `nprappstumblr@gmail.com` we need to make sure that `nprappstumblr@gmail.com` has at least read access to the document in order to avoid a `403` response to the server.
 
-License and credits
----------
+## License and credits
+
 Released under the MIT open source license. See ``LICENSE`` for details.
 
 
-Contributors
----------
+## Contributors
+
 This repo was developed by NPR Visuals team.
 
 See additional ``CONTRIBUTORS``
