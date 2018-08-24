@@ -85,7 +85,8 @@ Any environment variable that starts with ``$PROJECT_SLUG_`` will be automatical
 A flask app is used to run the project locally. It will automatically recompile templates and assets on demand.
 
 ```
-workon anno-docs-addon
+if [ ! -d "logs" ]; then mkdir logs; fi
+workon liveblog-addon
 fab app
 ```
 
