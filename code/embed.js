@@ -86,6 +86,7 @@ function getAttributes(formObject) {
             break;
         case "facebook":
         case "graphic":
+        case "ap_live_video":
             break;
         default:
             var msg =  Utilities.formatString("Unexpected shortcode type %s.", formObject.embed_type);
