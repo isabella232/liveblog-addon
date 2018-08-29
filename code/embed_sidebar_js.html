@@ -103,6 +103,13 @@
               $('#url-label').hide();
               $('#url').hide();
               $('#slugs').hide();
+              $('#attr-options').show();
+            }
+            else if ($("#radio-embed-type-aplivevideo").is(":checked")) {
+              $('#url-label').show();
+              $('#url').show();
+              $('#slugs').hide();
+              $('#attr-options').hide();
             }
             else if ($("#radio-embed-type-link").is(":checked")){
               $('#url-label').show();

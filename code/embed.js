@@ -202,7 +202,7 @@ function insertShortCode(formObject) {
         }
         else {
             var el = null;
-            // REST OF SHORTCODES SHOULD BE ON THERE OWN PARAGRAPH
+            // REST OF SHORTCODES SHOULD BE IN THEIR OWN PARAGRAPH
             if (selection) {
                 // Insert above the first selected element
                 var elements = selection.getSelectedElements();
