@@ -126,11 +126,16 @@ scripts
 | production
 ```
 
+After you run gs.create, the script will be added to the ENVIRONMENT folder specified. Go to that folder and open the file with Google Apps Script (that should be one of the options, see screenshot below).
+
+![Open with Google Apps Script](screenshots/open_google_apps.png)
+
 ## Test as an Add-On
 
-While you are developing changes to the google apps script, we strongly recommend that you use the `Publish -> Test as add-on` option on the project until you are happy with the results.
+While you are making changes to the google apps script, we strongly recommend that you use the `Run -> Test as add-on` option on the project until you are happy with the results.
 
 ![Test as an Add-On](screenshots/test_addon.png)
+
 
 ## Upsert project
 
