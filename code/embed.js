@@ -7,10 +7,11 @@ function showEmbedSidebar_() {
   var props = PropertiesService.getDocumentProperties();
   var ui = DocumentApp.getUi();
   var image_url = props.getProperty('image_url');
-  if (!image_url) {
-    var response = ui.alert('Image URL not found, you need to set it first');
-    return;
-  }
+  // Below commented out when throwing errors prohibiting the insert-shortcode sidebar to load when I was working on https://github.com/nprapps/liveblog/issues/35
+  //if (!image_url) {
+  //  var response = ui.alert('Image URL not found, you need to set it first');
+  //  return;
+  //}
   var doc = HtmlService.createTemplateFromFile('embed_sidebar');
   doc.logo = getLogo_();
   html = doc.evaluate();
