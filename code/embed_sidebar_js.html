@@ -72,12 +72,14 @@
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'https://twitter.com/titonka/status/791972573580001280').val('').focus().blur();
+              $('#attr-options').show();
             }
             else if ($("#radio-embed-type-image").is(":checked")) {
               $('#url-label').show();
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'FileName.jpg').val('').focus().blur();
+              $('#attr-options').show();
             }
             else if ($("#radio-embed-type-graphic").is(":checked")) {
               $('#url-label').show();
@@ -98,6 +100,7 @@
               $('#url').show();
               $('#slugs').hide();
               $('#url').attr('placeholder', 'https://www.youtube.com/embed/ucEAcIMkS0c').val('').focus().blur();
+              $('#attr-options').show();
             }
             else if ($("#radio-embed-type-nprvideo").is(":checked")) {
               $('#url-label').hide();
@@ -110,11 +113,13 @@
               $('#url').show();
               $('#slugs').hide();
               $('#attr-options').hide();
+              $('#url').attr('placeholder', 'https://content.jwplatform.com/players/dEu6RayL-5qkQag5F.html').val('').focus().blur();
             }
             else if ($("#radio-embed-type-link").is(":checked")){
               $('#url-label').show();
               $('#url').hide();
               $('#slugs').show();
+              $('#attr-options').show();
             }
 
             if ($("#radio-embed-type-image").is(":checked") || ($("#radio-embed-type-graphic").is(":checked"))) {
