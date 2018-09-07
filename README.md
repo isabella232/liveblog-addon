@@ -151,6 +151,19 @@ Where `ENVIRONMENT` can be: `development` or `production`. Depending on the envi
 fab development gs.upsert
 ```
 
+### Deploying to a Google Doc
+
+Once your code has been added to the Google Drive, there is a manual process to add it to an existing Google Doc. This is because [the deploy as add-on functionality requires a complex permissions set-up](https://github.com/nprapps/liveblog/issues/35#issuecomment-418856294).
+
+This is the process:
+
+#### When there's an earlier version of the addon that exists in the Google Doc
+
+1. In the Google Doc go to the Tools --> Script Editor menu option. 
+1. This will open a Google Scripts edit interface. Make sure you have another Google Scripts tab open to the new code.
+1. Figure out which files have changed and copy and paste from the new code to the old code. In the case of updating the shortcode sidebar, that meant updating embed.gs, embed_sidebar.html and embed_sidebar_js.html.
+1. Refresh the Google Doc (which will close that doc's Google Script tab), and see if the new code works.
+
 ## Google Document Permissions
 
 We are accessing the Live Fact Check document from the server to pull out its content using credentials associated with `nprappstumblr@gmail.com` we need to make sure that `nprappstumblr@gmail.com` has at least read access to the document in order to avoid a `403` response to the server.
